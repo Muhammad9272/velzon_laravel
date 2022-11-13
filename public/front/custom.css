@@ -1,0 +1,32 @@
+.nounderline{
+	text-decoration: none;
+}
+
+.tab-span{
+        background-color: rgba(36, 38, 130, 0.8);
+        margin-bottom: 20px;
+        border-radius: 5px;
+        padding: 12px 34px;
+}
+.pricing .tab-span{
+	background-color: rgb(36 37 130);
+}
+.tab-span .tab-btn {
+    color: white;
+    padding: 9px 48px;
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+    border-radius: 5px; 
+    margin: 2px;       
+}
+.tab-span .tab-btn.active{
+    background: #ecf0f3;
+    color: black;
+}
+.tab-span .tab-btn:hover {
+  background: #ecf0f3;
+  box-shadow: inset -3px -3px 7px #ffffff, inset 3px 3px 5px #ceced1;
+  border-radius: 5px;
+  color: black;
+}

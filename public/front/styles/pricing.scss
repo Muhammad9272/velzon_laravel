@@ -1,0 +1,38 @@
+@import "./common";
+.pricing-table {
+  padding: 2.5rem 1.5rem;
+  border-radius: 12px;
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+    li {
+      display: grid;
+      grid-template-columns: 32px auto;
+      align-items: center;
+      gap: 1rem;
+      &::before {
+        content: "";
+        width: 32px;
+        height: 32px;
+        background-image: url("../assets/icons/tick-circle.svg");
+        background-repeat: no-repeat;
+      }
+    }
+  }
+  // .btn {
+  //   border-width: 2px !important;
+  // }
+  &--primary {
+    background-color: $primary-color;
+    color: white;
+    .btn-outline-primary {
+      border-color: white;
+      background-color: white;
+      &:hover {
+        border-color: white !important;
+      }
+    }
+  }
+}

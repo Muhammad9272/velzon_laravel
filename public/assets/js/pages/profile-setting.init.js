@@ -42,6 +42,34 @@ if (document.querySelector("#profile-img-file-input")) {
   });
 }
 
+if (document.querySelector("#profile-img-file-input1")) {
+  document.querySelector("#profile-img-file-input1").addEventListener("change", function () {
+    var preview = document.querySelector(".user-profile-image1");
+    var file = document.querySelector(".profile-img-file-input1").files[0];
+    var reader = new FileReader();
+    reader.addEventListener("load", function () {
+      preview.src = reader.result;
+    }, false);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  });
+}
+if (document.querySelector("#profile-img-file-input2")) {
+  document.querySelector("#profile-img-file-input2").addEventListener("change", function () {
+    var preview = document.querySelector(".user-profile-image2");
+    var file = document.querySelector(".profile-img-file-input2").files[0];
+    var reader = new FileReader();
+    reader.addEventListener("load", function () {
+      preview.src = reader.result;
+    }, false);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  });
+}
 var count = 2; // var genericExamples = document.querySelectorAll("[data-trigger]");
 // for (i = 0; i < genericExamples.length; ++i) {
 //     var element = genericExamples[i];

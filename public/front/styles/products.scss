@@ -1,0 +1,42 @@
+@import "./common";
+.ts-product-listing {
+  display: grid;
+  // grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+.ts-category-main {
+  margin-top: 200px;
+}
+.ts-product-card {
+  display: grid;
+  // grid-template-columns: auto;
+  grid-template-columns: 200px auto;
+
+  &__header {
+    img {
+      width: 100%;
+    }
+  }
+  &__content,
+  &__icon-list {
+    padding: 1rem;
+  }
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-direction: column;
+  }
+
+  &__icon-list {
+    border-top: 1px solid #e8e8e8;
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: auto;
+  }
+}
+
+.ts-listing-details {
+  margin-top: 200px;
+}

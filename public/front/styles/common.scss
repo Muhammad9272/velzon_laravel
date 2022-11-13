@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap");
+
+$primary-color: #242582;
+$secondary-color: #f64c72;
+$dark-gray-color: #333333;
+$medium-gray-color: #8c8c8c;
+$white-color: #fff;
+$black-color: #000000;
+$green-color: #8fcb67;
+$skyblue-color: #3ea4cf;
+
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+.ts-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 680px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm {
+    max-width: 930px;
+  }
+}
+@media (min-width: 1200px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1100px;
+  }
+}
+@media (min-width: 1400px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1300px;
+  }
+}
+@media (min-width: 1500px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1320px;
+  }
+}
+
+// .container {
+//   padding: 0 0.75rem !important;
+// }
+
+.mw {
+  &-1000 {
+    max-width: 1000px;
+  }
+}
+
+.ts-page {
+  &__title {
+    font-size: clamp(40px, 5vw, 72px);
+  }
+  &__subtitle {
+    font-size: clamp(24px, 4vw, 34px);
+  }
+}
+
+.ts-desc-lg {
+  font-size: clamp(18px, 2.4vw, 22px);
+}
+
+.text {
+  &-primary {
+    color: $primary-color;
+  }
+  &-secondary {
+    color: $secondary-color;
+  }
+  &-medium-gray {
+    color: $medium-gray-color;
+  }
+  &-white {
+    color: $white-color;
+  }
+  &-black {
+    color: $black-color;
+  }
+}
+
+.mt {
+  @media (min-width: 991px) {
+    &-lg {
+      &-10 {
+        margin-top: 100px;
+      }
+      &-20 {
+        margin-top: 200px;
+      }
+    }
+  }
+}
+
+.mb {
+  &-6 {
+    margin-bottom: 3.75rem;
+  }
+  &-7 {
+    margin-bottom: clamp(3rem, 5vw, 5rem);
+  }
+  &-8 {
+    margin-bottom: clamp(3.5rem, 5.4vw, 6rem);
+  }
+
+  &-10 {
+    margin-bottom: clamp(6rem, 6vw, 9rem);
+  }
+}
+
+.ts-heading {
+  &-1 {
+    font-size: clamp(2.5rem, 5vw, 3.75rem);
+  }
+  &-2 {
+    font-size: clamp(2.1rem, 4vw, 3rem);
+  }
+  &-3 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+  &-4 {
+    font-size: clamp(1.6rem, 3.5vw, 2rem);
+  }
+  &-5 {
+    font-size: clamp(1.3rem, 3.5vw, 1.6rem);
+  }
+  &-6 {
+    font-size: clamp(1.1rem, 3.5vw, 1.375rem);
+  }
+}
+
+.btn {
+  padding: 12px 48px;
+  font-size: 18px;
+
+  &-primary {
+    background-color: $primary-color;
+    border-color: $primary-color;
+    &:hover {
+      background-color: $primary-color;
+      border-color: $primary-color;
+    }
+  }
+  &-secondary {
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+    &:hover {
+      background-color: $secondary-color !important;
+      border-color: $secondary-color !important;
+    }
+  }
+
+  &-outline {
+    &-primary {
+      border-color: $primary-color;
+      color: $primary-color;
+      &:hover {
+        background-color: $primary-color !important;
+        border-color: $primary-color !important;
+      }
+    }
+  }
+
+  &-xl {
+    width: 450px;
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+  }
+}
+
+.navbar {
+  border-radius: 12px;
+  padding: 0.625rem 1rem;
+  .nav-link {
+    color: $black-color;
+  }
+}
+.ts-footer {
+  background-color: $primary-color;
+  color: white;
+  padding: 107px 0 0;
+  &__links {
+    margin-top: 76px;
+  }
+  &__link {
+    text-decoration: none;
+    color: white;
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+  &__footer {
+    background-color: white;
+  }
+}

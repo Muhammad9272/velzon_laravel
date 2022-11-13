@@ -1,0 +1,18 @@
+// @import "./common";
+
+.ts-contact-form {
+  background-color: rgba(36, 38, 130, 0.8);
+  padding: 3.75rem 3rem;
+  max-width: 500px;
+  margin: 0 auto;
+
+  .form-control {
+    background-color: rgba(36, 38, 130, 0.4);
+    color: white;
+    border: 1px solid halfwhite;
+  }
+
+  label {
+    color: white;
+  }
+}

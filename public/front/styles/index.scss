@@ -1,0 +1,54 @@
+@import "./common";
+
+body {
+  padding: 0;
+  margin: 0;
+  // background-color: $primary-color;
+  // color: $white-color;
+  font-family: sans-serif;
+}
+
+.ts-hero {
+  position: relative;
+  background-color: $primary-color;
+  padding: 150px 0 133px;
+  isolation: isolate;
+  margin-bottom: 25vw;
+
+  &__bottom-img {
+    position: absolute;
+    left: 50%;
+    bottom: 15vw;
+    transform: translate(-50%, 100%);
+    z-index: -1;
+    width: 120vw;
+  }
+}
+
+.ts-hero {
+  text-align: center;
+  &__main {
+    background-color: rgba(147, 238, 218, 0.1);
+    min-height: 740px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    padding: 50px 12px;
+  }
+  .btn-primary {
+    margin-top: 60px;
+  }
+
+  @media (max-width: 575px) {
+    &__main {
+      min-height: 540px;
+    }
+  }
+}
+
+.ts-products {
+  margin-bottom: 150px;
+  @media (max-width: 991px) {
+    margin-bottom: 70px;
+  }
+}
