@@ -22,25 +22,28 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 me-lg-5 mb-lg-0">
+                  @if(!Auth::check() || (Auth::check() && !Auth::user()->userSubscriptions()->exists()))
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="{{ route('front.index') }}"
                       >Home</a
                     >
-                  </li>
-                  
+                  </li> 
+                  @endif                 
                   @if(!Auth::check())
                   <li class="nav-item">
                     <a class="nav-link" href="{{ route('user.login') }}">Login</a>
                   </li>
                   @else
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="{{ route('front.category') }}"
-                      >Category</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{ route('user.dashboard') }}">Dashboard</a>
-                  </li>
+                    @if(Auth::user()->userSubscriptions()->exists())
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="{{ route('front.category') }}">Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('user.dashboard') }}">       
+                          Affiliate Dashboard
+                        </a>
+                    </li>
+                    @endif
                   <li class="nav-item">
                     <a class="nav-link" href="{{ route('user.logout') }}">Logout</a>
                   </li>
@@ -52,7 +55,7 @@
                 >
                 @else
                 <a class="btn btn-primary fw-bold" href="{{ route('front.pricing') }}"
-                  >Subscribe Now</a
+                  >{{Auth::user()->userSubscriptions()->exists()?'Cancel Subscription':'Start free Trial'}}</a
                 >
                 @endif
               </div>

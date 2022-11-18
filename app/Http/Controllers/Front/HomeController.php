@@ -9,10 +9,11 @@ use App\Models\SubPlan;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Session;
+use Auth;
 class HomeController extends Controller
 {
     public function index(Request $request)
-    { 
+    {   
         if(!empty($request->reff))
          {
             $affiliate_user = User::where('affiliate_code','=',$request->reff)->first();
@@ -28,6 +29,9 @@ class HomeController extends Controller
             }
 
          }   
+      if(Auth::check() && Auth::user()->userSubscriptions()->exists()) {
+        return redirect()->route('front.category');
+      }  
       return view('front.index');
     }
 }

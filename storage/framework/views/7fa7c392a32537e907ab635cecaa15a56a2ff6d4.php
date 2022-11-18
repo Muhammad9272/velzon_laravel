@@ -22,25 +22,28 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 me-lg-5 mb-lg-0">
+                  <?php if(!Auth::check() || (Auth::check() && !Auth::user()->userSubscriptions()->exists())): ?>
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="<?php echo e(route('front.index')); ?>"
                       >Home</a
                     >
-                  </li>
-                  
+                  </li> 
+                  <?php endif; ?>                 
                   <?php if(!Auth::check()): ?>
                   <li class="nav-item">
                     <a class="nav-link" href="<?php echo e(route('user.login')); ?>">Login</a>
                   </li>
                   <?php else: ?>
-                  <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="<?php echo e(route('front.category')); ?>"
-                      >Category</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="<?php echo e(route('user.dashboard')); ?>">Dashboard</a>
-                  </li>
+                    <?php if(Auth::user()->userSubscriptions()->exists()): ?>
+                    <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="<?php echo e(route('front.category')); ?>">Category</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo e(route('user.dashboard')); ?>">       
+                          Affiliate Dashboard
+                        </a>
+                    </li>
+                    <?php endif; ?>
                   <li class="nav-item">
                     <a class="nav-link" href="<?php echo e(route('user.logout')); ?>">Logout</a>
                   </li>
@@ -52,7 +55,7 @@
                 >
                 <?php else: ?>
                 <a class="btn btn-primary fw-bold" href="<?php echo e(route('front.pricing')); ?>"
-                  >Subscribe Now</a
+                  ><?php echo e(Auth::user()->userSubscriptions()->exists()?'Cancel Subscription':'Start free Trial'); ?></a
                 >
                 <?php endif; ?>
               </div>

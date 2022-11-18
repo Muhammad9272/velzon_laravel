@@ -43,6 +43,11 @@
                         <i class="ri-team-fill"></i> <span>Earnings </span>
                     </a>                    
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{ route('front.category') }}" >
+                        <i class="bx bxs-category"></i> <span>Categories </span>
+                    </a>                    
+                </li>
 
 
                 {{-- <li class="nav-item">

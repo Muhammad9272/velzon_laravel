@@ -16,7 +16,6 @@ class RegisterController extends Controller
 
     public function showRegisterForm()
     {  
-        // return view('user.register',compact('user'));
         return view('front.register');
     }
 
